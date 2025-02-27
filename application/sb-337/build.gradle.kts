@@ -13,6 +13,7 @@ plugins {
 dependencies {
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
+    runtimeOnly("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
