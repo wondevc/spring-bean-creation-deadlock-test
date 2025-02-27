@@ -11,7 +11,8 @@ plugins {
 }
 
 dependencies {
-    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     runtimeOnly("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -19,7 +20,7 @@ dependencies {
 
     runtimeOnly("org.flywaydb:flyway-mysql:11.3.3")
 
-    runtimeOnly("io.asyncer:r2dbc-mysql:1.4.0")
+    runtimeOnly("io.asyncer:r2dbc-mysql:1.3.0")
     runtimeOnly("mysql:mysql-connector-java:8.0.32")
 }
 
