@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  r2dbc:
+    name: sb337
+    generate-unique-name: false
+    url: r2dbc:pool:mysql://localhost:3306
+    username: root
+    password: qDgeAK<ipV89^%68DYmN
+    properties:
+      acquireRetry: 3
+      backgroundEvictionInterval: PT10M
+      initialSize: 5
+      maxSize: 10
+      minIdle: 5
+      maxAcquireTime: PT30S
+      maxCreateConnectionTime: PT10S
+      maxIdleTime: PT30M
+      maxLifeTime: PT1H
+      registerJmx: false
+      maxValidationTime: PT5S
+      validationQuery: SELECT 1
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 1.0.0
+    url: jdbc:mysql://localhost:3306
+    user: root
+    password: qDgeAK<ipV89^%68DYmN
+    default-schema: sb337_flyway
+
+logging:
+  level:
+    io.asyncer.r2dbc.mysql.QUERY: DEBUG

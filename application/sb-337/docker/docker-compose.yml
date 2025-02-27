@@ -1,0 +1,17 @@
+name: sb337
+
+services:
+  mysql-database:
+    container_name: sb337-mysql-database
+    image: mysql:8.0.32
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sb337-mysql-database-volumes/mysql:/var/lib/mysql
+      - ./sb337-mysql-database-volumes/mysql-initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: qDgeAK<ipV89^%68DYmN
+      TZ: Asia/Seoul
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
